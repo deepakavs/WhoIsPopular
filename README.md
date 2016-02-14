@@ -15,4 +15,5 @@ it returns a json object as shown below
 
 {"popular":"aporter"}
 
-Note: user validation not added. Please make sure you write correct usernames
+Note: User validation not added. Please make sure you write correct usernames
+      You can also find the application at Good UI at http://localhost:3000/pop
