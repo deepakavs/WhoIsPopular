@@ -7,6 +7,14 @@ app.get('/', function(req,res){
     res.render('default');
 })
 app.get('/pop', function (req,res) {
+compare(req,res);
+
+});
+
+
+
+
+function compare(req,res){
     firstuser = req.query.firstuser;
     seconduser = req.query.seconduser;
     var firstdetails =0;
@@ -39,7 +47,7 @@ app.get('/pop', function (req,res) {
             var folls = parseInt(JSON.parse(body).followers);
             var count =repos+ folls;
             seconddetails=count;
-           // console.log("second" + seconddetails);
+            // console.log("second" + seconddetails);
             if(parseInt(firstdetails) > parseInt(seconddetails))
                 res.send({popular:firstuser});
             else
@@ -55,17 +63,6 @@ app.get('/pop', function (req,res) {
         {  'User-Agent': 'deepakavs',
             'cache-control': 'no-cache'
         } };
-    
-})
-
-
-
-
-
-
-
-function compare(first,second){
- return null;
 }
 
 app.listen(3000, function(){
