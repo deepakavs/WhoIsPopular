@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var rp = require('request-promise');
 var request = require('request');
+app.set('views', __dirname + '/views');
 app.set('view engine','ejs');
 app.get('/', function(req,res){
     res.render('default');
