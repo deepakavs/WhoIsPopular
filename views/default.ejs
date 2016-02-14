@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhoisPop</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+<header class="jumbotron" style="background-color:lightblue">
+    <div class="container">
+        <div class="row">
+            <div style="padding-top:30px"class="col-xs-12 col-sm-12"></div>
+            <div class="col-xs-12 col-sm-12" >
+                <h1 style="font-family: cursive">Who is Popular</h1>
+            </div>
+            <div class="col-xs-12 col-sm-12" >
+                <p style="font-family:'Courier 10 Pitch'">When you enter the user names of two git hub users you want to compare, The app will return a JSON object of the popular person among the two.
+                    Comparision is based on the stats like number of  followers and repositories</p>
+            </div>
+        </div>
+    </div>
+
+</header>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+        <form class="form-inline" method="get" action="/pop" enctype="multipart/form-data">
+            <div class="form-group col-xs-12 col-sm-4">
+                <label class="sr-only" for="firstuser">First user</label>
+                <input type="text" class="form-control" name="firstuser" id="firstuser" placeholder="Enter First user">
+            </div>
+            <div class="form-group col-xs-12 col-sm-4">
+                <label class="sr-only" for="seconduser">First user</label>
+                <input type="text" class="form-control" name="seconduser" id="seconduser" placeholder="Enter Second user">
+            </div>
+            <button type="submit" class="btn btn-primary col-xs-12 col-sm-4">Submit</button>
+
+        </form>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

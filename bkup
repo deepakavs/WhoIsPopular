@@ -1,0 +1,69 @@
+var express = require('express');
+var app = express();
+
+var request = require('request');
+app.set('view engine','ejs');
+app.get('/', function(req,res){
+    res.render('default');
+})
+app.get('/pop', function (req,res) {
+    firstuser = req.query.firstuser;
+    seconduser = req.query.seconduser;
+    var firstdetails;
+    var seconddetails;
+    var path1 = 'https://api.github.com/users/'+firstuser;
+    var options = { method: 'GET',
+        url:path1 ,
+        headers:
+        {  'User-Agent': 'deepakavs',
+            'cache-control': 'no-cache'
+        } };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        var repos= JSON.parse(body).public_repos;
+        var folls = JSON.parse(body).followers;
+       console.log(repos+ folls);
+       var count =repos+ folls;
+
+    });
+
+    var path2 = 'https://api.github.com/users/' + seconduser;
+    var options = { method: 'GET',
+        url:path2 ,
+        headers:
+        {  'User-Agent': 'deepakavs',
+            'cache-control': 'no-cache'
+        } };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        var repos= JSON.parse(body).public_repos;
+        var folls = JSON.parse(body).followers;
+        console.log(repos+ folls);
+        var count =repos+ folls;
+
+    });
+
+
+    function setfirst(data){
+        firstdetails = data;
+    }
+    function setsecond(data){
+        seconddetails = data;
+    }
+})
+
+
+
+
+
+
+
+function compare(first,second){
+ return null;
+}
+
+app.listen(3000, function(){
+   console.log('listening on 3000');
+})
